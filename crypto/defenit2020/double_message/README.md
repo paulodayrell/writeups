@@ -32,7 +32,7 @@ Em resumo, temos:
 
 Como as mensagens ```M1``` e ```M2``` foram criptografadas com o mesmo módulo ```N``` e o expoente público ```e``` é pequeno, se soubermos a diferença entre ```M1```e ```M2``` conseguimos recuperar as mensagens utilizando [Franklin-Reiter related message attack](https://crypto.stanford.edu/~dabo/pubs/papers/RSA-survey.pdf).
 
-Seja ```m = floor(n / e**2)```, se a ```Flag``` possuir comprimento de até ```n - m``` bits, onde ```n``` é o comprimento do módulo ```N``` podemos recuperar a diferença entre ```M1```e ```M2``` utilizando o método de [Coppersmith](https://crypto.stanford.edu/~dabo/pubs/papers/RSA-survey.pdf).
+Seja ```m = floor(n / e**2)```, se a ```Flag``` possuir comprimento de até ```n - m``` bits, onde ```n``` é o comprimento do módulo ```N```, podemos recuperar a diferença entre ```M1```e ```M2``` utilizando o método de [Coppersmith](https://crypto.stanford.edu/~dabo/pubs/papers/RSA-survey.pdf).
 
 
 
