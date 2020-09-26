@@ -109,7 +109,7 @@ Para isso devemos contornar as seguintes restrições:
 - não podemos interagir com *stdin*, *stdout* e *stderr*
 - não podemos fazer chamada às *syscalls* filtradas em **setup_syscall_filter**
 
-Na primeira versão deste desafio ([meek boi](https://github.com/nullcon/hackim-2020/tree/master/pwn/meek_boi)) é possível resolver através de uma *shell* reversa. Mas, no [sleek boi](https://github.com/nullcon/hackim-2020/tree/master/pwn/sleek_boi), não podemos estabelecer uma conexão TCP. Logo, temos que adotar outra estratégia. A alternativa que utilizei neste desafio foi exfiltrar a *flag* via UDP.
+Na primeira versão deste desafio ([meek boi](https://github.com/nullcon/hackim-2020/tree/master/pwn/meek_boi)) é possível resolver através de uma simples *shell* reversa sob TCP. Mas, no [sleek boi](https://github.com/nullcon/hackim-2020/tree/master/pwn/sleek_boi), não podemos realizar ```bind```e ```connect```. Logo, temos que adotar outra estratégia. A alternativa que utilizei neste desafio foi exfiltrar a *flag* via ```SOCK_DGRAM``` utilizando a *syscall* ```sendto```.
 
 
 <pre lang="asm">
@@ -206,8 +206,3 @@ $ printf $(for i in $(objdump -d sc -M intel |grep "^ " |cut -f2); do echo -n '\
 
 ### Flag
 `hackim20{OMG_The_first_one_was_unintended}`
-
-
-
-
-
